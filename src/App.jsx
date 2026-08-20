@@ -1,76 +1,53 @@
-import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import TrustStrip from './components/TrustStrip';
 import About from './components/About';
-import Approach from './components/Approach';
-import Services from './components/Services';
-import PhotoBanner from './components/PhotoBanner';
-import PrescriptionEnquiry from './components/PrescriptionEnquiry';
-import WhyChooseUs from './components/WhyChooseUs';
-import Registration from './components/Registration';
+import Capabilities from './components/Capabilities';
+import ScienceSection from './components/ScienceSection';
+import WhyNexacure from './components/WhyNexacure';
+import Compliance from './components/Compliance';
 import Location from './components/Location';
-import ContactCTA from './components/ContactCTA';
-import ContactForm from './components/ContactForm';
+import Contact from './components/Contact';
 import WhatsAppButton from './components/WhatsAppButton';
 import Footer from './components/Footer';
+import LegalPage, { isLegalPath } from './components/LegalPage';
 import { config } from './config';
+import { useEffect, useState } from 'react';
 
-function App() {
+export default function App() {
+  const [path, setPath] = useState(window.location.pathname);
   useEffect(() => {
-    // Set page title
     document.title = config.seo.title;
-
-    // Set meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', config.seo.description);
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = config.seo.description;
-      document.head.appendChild(meta);
-    }
-
-    // Add Open Graph meta tags
-    const ogTags = [
-      { property: 'og:title', content: config.seo.title },
-      { property: 'og:description', content: config.seo.description },
-      { property: 'og:type', content: 'business.business' },
-    ];
-
-    ogTags.forEach((tag) => {
-      let element = document.querySelector(`meta[property="${tag.property}"]`);
-      if (!element) {
-        element = document.createElement('meta');
-        element.setAttribute('property', tag.property);
-        document.head.appendChild(element);
-      }
-      element.setAttribute('content', tag.content);
-    });
+    document.querySelector('meta[name="description"]')?.setAttribute('content', config.seo.description);
   }, []);
 
+  useEffect(() => {
+    const scrollToRoute = () => {
+      setPath(window.location.pathname);
+      const id = window.location.pathname === '/' ? 'home' : window.location.pathname.slice(1);
+      document.getElementById(id)?.scrollIntoView({ block: 'start' });
+    };
+    scrollToRoute();
+    window.addEventListener('popstate', scrollToRoute);
+    return () => window.removeEventListener('popstate', scrollToRoute);
+  }, []);
+
+  if (isLegalPath(path)) return <div className="overflow-x-clip bg-[#061411] text-slate-100"><Navbar /><LegalPage path={path} /><Footer /></div>;
+
   return (
-    <div className="min-h-screen bg-light-off-white">
+    <div className="overflow-x-clip bg-[#061411] text-slate-100">
       <Navbar />
       <main>
         <Hero />
-        <TrustStrip />
         <About />
-        <Approach />
-        <Services />
-        <PhotoBanner />
-        <PrescriptionEnquiry />
-        <WhyChooseUs />
-        <Registration />
+        <Capabilities />
+        <ScienceSection />
+        <WhyNexacure />
+        <Compliance />
         <Location />
-        <ContactCTA />
-        <ContactForm />
+        <Contact />
       </main>
       <Footer />
       <WhatsAppButton />
     </div>
   );
 }
-
-export default App;

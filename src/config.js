@@ -1,34 +1,25 @@
-import heroImage from './assets/pharmacy/hero-pharmacy.png';
-import pharmacistAssistanceImage from './assets/pharmacy/pharmacist-assistance.png';
-import pharmacyBannerImage from './assets/pharmacy/pharmacy-banner.png';
+import molecularHero from './assets/nexacure/molecular-hero.png';
 
 // Business configuration
 export const config = {
   // Business Information
-  businessName: 'MEDIGENIX PHARMA',
-  businessType: 'Chemist & Druggist',
-  tagline: 'Professional pharmacy service in Hyderabad.',
-  established: 'June 13, 2023',
+  businessName: 'NEXACURE PHARMA',
+  businessType: 'PHARMACEUTICALS',
+  tagline: 'Pharmaceutical-focused organization in Hyderabad.',
+  established: '13 June 2023',
   establishedShort: '2023',
 
   // Contact Information - EDIT THESE
-  phone: '+91-63012-89943',
-  email: 'support@medigenixpharma.in',
-  whatsapp: '+91-63012-89943',
+  whatsapp: '918639866876',
+  email: 'support@nexacurepharma.in',
   
   // Business Hours - EDIT THESE
-  hours: {
-    mon_fri: '9:00 AM - 8:00 PM',
-    sat: '9:00 AM - 6:00 PM',
-    sun: 'Closed',
-  },
-
   // Address
   address: {
-    businessName: 'MEDIGENIX PHARMA',
-    street: '18-13-9/78',
-    area: 'Bandlaguda',
-    circle: 'Chandrayangutta, Circle 1',
+    businessName: 'NEXACURE PHARMA',
+    street: '19-4-14/1/6, Back Side Amodi Garden',
+    area: 'Bandlaguda, Chandrayangutta',
+    circle: 'Circle 1',
     city: 'Hyderabad',
     state: 'Telangana',
     pincode: '',
@@ -37,43 +28,22 @@ export const config = {
 
   // Registration Details
   registration: {
-    number: 'SEA/HYD/ACL/A4/1309294/2026',
+    number: 'SEA/HYD/ACL/A4/1309297/2026',
     registeredDate: '11 April 2026',
-    businessType: 'Chemist & Druggist',
+    businessType: 'PHARMACEUTICALS',
     act: 'Telangana Shops & Establishments Act, 1988',
-  },
-
-  // Maps Configuration
-  maps: {
-    placeName: 'MEDIGENIX PHARMA, Bandlaguda, Hyderabad',
-    // Update with actual coordinates when available
-    latitude: 17.3850,
-    longitude: 78.5205,
   },
 
   // Local image assets - no external image service is required.
   images: {
-    hero: heroImage,
-    about: pharmacistAssistanceImage,
-    services: pharmacistAssistanceImage,
-    photoBanner: pharmacyBannerImage,
-    prescription: pharmacistAssistanceImage,
-    whyChoose: heroImage,
-    contactCta: pharmacyBannerImage,
-  },
-
-  // Social Links (if needed)
-  social: {
-    whatsapp: 'https://wa.me/',
-    facebook: '#',
-    instagram: '#',
+    hero: molecularHero,
   },
 
   // SEO
   seo: {
-    title: 'MEDIGENIX PHARMA | Trusted Pharmacy in Hyderabad',
-    description: 'MEDIGENIX PHARMA is a chemist and druggist in Bandlaguda, Chandrayangutta, Hyderabad, providing professional pharmacy services and customer assistance.',
-    keywords: 'pharmacy, chemist, druggist, Hyderabad, Bandlaguda, Chandrayangutta, prescription, medicine enquiry',
+    title: 'NEXACURE PHARMA | Pharmaceutical Healthcare Solutions',
+    description: 'NEXACURE PHARMA is a pharmaceutical-focused commercial establishment in Hyderabad, Telangana, India.',
+    keywords: 'NEXACURE PHARMA, pharmaceuticals, Hyderabad, Telangana',
   },
 };
 

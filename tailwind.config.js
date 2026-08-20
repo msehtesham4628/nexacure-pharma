@@ -5,7 +5,8 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
+    extend: {
+      colors: {
       'white': '#ffffff',
       'black': '#000000',
       'gray': {
@@ -31,25 +32,13 @@ export default {
         50: '#fef2f2',
         600: '#dc2626',
       },
-    },
-    fontFamily: {
-      'sans': ['Inter', 'system-ui', 'avenir', 'helvetica', 'arial', 'sans-serif'],
-    },
-    fontSize: {
-      'display-lg': ['3.5rem', { lineHeight: '1.1' }],
-      'display': ['3rem', { lineHeight: '1.2' }],
-      'heading-lg': ['2.25rem', { lineHeight: '1.3' }],
-      'heading': ['1.875rem', { lineHeight: '1.4' }],
-      'subheading': ['1.25rem', { lineHeight: '1.5' }],
-      'xs': ['0.75rem', { lineHeight: '1rem' }],
-      'sm': ['0.875rem', { lineHeight: '1.25rem' }],
-      'base': ['1rem', { lineHeight: '1.5rem' }],
-      'lg': ['1.125rem', { lineHeight: '1.75rem' }],
-      'xl': ['1.25rem', { lineHeight: '1.75rem' }],
-      '2xl': ['1.5rem', { lineHeight: '2rem' }],
-      '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-    },
-    spacing: {
+      },
+      fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], serif: ['Georgia', 'serif'] },
+      fontSize: {
+        'display-lg': ['3.5rem', { lineHeight: '1.1' }],
+        'display': ['3rem', { lineHeight: '1.2' }],
+      },
+      spacing: {
       '0': '0px',
       '1': '0.25rem',
       '2': '0.5rem',
@@ -70,14 +59,14 @@ export default {
       '24': '6rem',
       '32': '8rem',
       '40': '10rem',
-    },
-    animation: {
+      },
+      animation: {
       'fade-up': 'fadeUp 0.8s ease-out forwards',
       'fade-in': 'fadeIn 0.6s ease-out forwards',
       'scale-in': 'scaleIn 0.6s ease-out forwards',
       'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-    },
-    keyframes: {
+      },
+      keyframes: {
       fadeUp: {
         'from': {
           opacity: '0',
@@ -114,11 +103,9 @@ export default {
           opacity: '.5',
         },
       },
+      },
+      backdropBlur: { sm: '4px' },
     },
-    backdropBlur: {
-      'sm': '4px',
-    },
-    extend: {},
   },
   plugins: [],
 }
