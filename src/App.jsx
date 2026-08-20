@@ -33,7 +33,7 @@ export default function App() {
     });
   }, [path]);
 
-  if (isLegalPath(path)) return <div className="overflow-x-clip bg-[#061411] text-slate-100"><Navbar /><LegalPage path={path} /><Footer /></div>;
+  if (isLegalPath(path)) return <div className="overflow-x-clip bg-[#061411] text-slate-100"><Navbar /><LegalPage path={path} /><Footer /><WhatsAppButton /></div>;
 
   return (
     <div className="overflow-x-clip bg-[#061411] text-slate-100">
