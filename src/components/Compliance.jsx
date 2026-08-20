@@ -1,2 +1,48 @@
-import { ChevronDown, FileCheck2 } from 'lucide-react'; import { useState } from 'react'; import { config } from '../config';
-export default function Compliance(){const [open,setOpen]=useState(false);const rows=[['Registration Number',config.registration.number],['Registration Date',config.registration.registeredDate],['Date of Commencement',config.established],['Nature of Business',config.businessType]];return <section id="compliance" className="bg-[#0a1e19] py-24 sm:py-32"><div className="container-x grid gap-14 lg:grid-cols-[.85fr_1.15fr]"><div><p className="eyebrow">05 / Compliance</p><h2 className="section-title mt-5">Registered with a clear record.</h2><p className="mt-7 max-w-md leading-7 text-slate-400">NEXACURE PHARMA is registered as a Commercial Establishment under the Telangana Shops &amp; Establishments Act, 1988.</p></div><div className="border border-emerald-200/20 bg-white/[.035] p-6 sm:p-9"><div className="flex items-start justify-between"><div><FileCheck2 className="text-emerald-200" size={30}/><h3 className="mt-5 text-xl text-white">Government Registered Establishment</h3></div><span className="rounded-full border border-emerald-200/20 px-3 py-1 text-[10px] uppercase tracking-widest text-emerald-200">Registered</span></div><dl className="mt-8 border-t border-white/10">{rows.map(([a,b])=><div className="grid gap-1 border-b border-white/10 py-4 sm:grid-cols-2" key={a}><dt className="text-xs uppercase tracking-wider text-slate-500">{a}</dt><dd className="text-sm text-slate-200">{b}</dd></div>)}</dl><button onClick={()=>setOpen(!open)} className="mt-7 flex w-full items-center justify-between border border-white/15 px-4 py-3 text-sm text-white transition hover:border-emerald-200">View Registration Details <ChevronDown className={open?'rotate-180 transition':'transition'} size={18}/></button>{open&&<p className="border-x border-b border-white/15 p-4 text-sm leading-6 text-slate-400">Registration type: {config.registration.act}. This section presents registration information supplied for NEXACURE PHARMA; it is not an online verification service.</p>}</div></div></section>}
+import { ChevronDown, FileCheck2 } from 'lucide-react';
+import { useState } from 'react';
+import { config } from '../config';
+
+export default function Compliance() {
+	const [open, setOpen] = useState(false);
+	const rows = [
+		['Registration Number', config.registration.number],
+		['Registration Date', config.registration.registeredDate],
+		['Date of Commencement', config.established],
+		['Nature of Business', config.businessType],
+	];
+
+	return (
+		<section id="compliance" className="bg-[#0a1e19] py-24 sm:py-32">
+			<div className="container-x grid gap-14 lg:grid-cols-[.85fr_1.15fr]">
+				<div>
+					<p className="eyebrow">05 / Compliance</p>
+					<h2 className="section-title mt-5">Registered with a clear record.</h2>
+					<p className="mt-7 max-w-md leading-7 text-slate-400">
+						NEXACURE PHARMA is registered as a commercial establishment under the Telangana Shops &amp; Establishments Act, 1988. The registration information displayed on this website is provided for informational purposes.
+					</p>
+				</div>
+				<div className="border border-emerald-200/20 bg-white/[.035] p-6 sm:p-9">
+					<div className="flex items-start justify-between">
+						<div>
+							<FileCheck2 className="text-emerald-200" size={30} />
+							<h3 className="mt-5 text-xl text-white">Government Registered Establishment</h3>
+						</div>
+						<span className="rounded-full border border-emerald-200/20 px-3 py-1 text-[10px] uppercase tracking-widest text-emerald-200">Registered</span>
+					</div>
+					<dl className="mt-8 border-t border-white/10">
+						{rows.map(([label, value]) => (
+							<div className="grid gap-1 border-b border-white/10 py-4 sm:grid-cols-2" key={label}>
+								<dt className="text-xs uppercase tracking-wider text-slate-500">{label}</dt>
+								<dd className="text-sm text-slate-200">{value}</dd>
+							</div>
+						))}
+					</dl>
+					<button onClick={() => setOpen(!open)} className="mt-7 flex w-full items-center justify-between border border-white/15 px-4 py-3 text-sm text-white transition hover:border-emerald-200">
+						View Registration Details <ChevronDown className={open ? 'rotate-180 transition' : 'transition'} size={18} />
+					</button>
+					{open && <p className="border-x border-b border-white/15 p-4 text-sm leading-6 text-slate-400">Registration type: {config.registration.act}. This section presents registration information supplied for NEXACURE PHARMA; it is not an online verification service.</p>}
+				</div>
+			</div>
+		</section>
+	);
+}
