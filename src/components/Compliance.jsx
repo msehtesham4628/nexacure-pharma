@@ -40,7 +40,7 @@ export default function Compliance() {
 					<button onClick={() => setOpen(!open)} className="mt-7 flex w-full items-center justify-between border border-white/15 px-4 py-3 text-sm text-white transition hover:border-emerald-200">
 						View Registration Details <ChevronDown className={open ? 'rotate-180 transition' : 'transition'} size={18} />
 					</button>
-					{open && <p className="border-x border-b border-white/15 p-4 text-sm leading-6 text-slate-400">Registration type: {config.registration.act}. This section presents registration information supplied for NEXACURE PHARMA; it is not an online verification service.</p>}
+					  {open && <p className="border-x border-b border-white/15 p-4 text-sm leading-6 text-slate-400">Registration type: {config.registration.act}.</p>}
 				</div>
 			</div>
 		</section>
