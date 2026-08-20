@@ -15,7 +15,7 @@ export default function Compliance() {
 		<section id="compliance" className="bg-[#0a1e19] py-24 sm:py-32">
 			<div className="container-x grid gap-14 lg:grid-cols-[.85fr_1.15fr]">
 				<div>
-					<p className="eyebrow">05 / Compliance</p>
+					  <p className="eyebrow">Compliance</p>
 					<h2 className="section-title mt-5">Registered with a clear record.</h2>
 					<p className="mt-7 max-w-md leading-7 text-slate-400">
 						NEXACURE PHARMA is registered as a commercial establishment under the Telangana Shops &amp; Establishments Act, 1988. The registration information displayed on this website is provided for informational purposes.
