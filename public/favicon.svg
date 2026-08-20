@@ -1,10 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-  <!-- Pill/Capsule Icon in pharmacy green -->
-  <!-- Left hemisphere (white) -->
-  <circle cx="12" cy="24" r="10" fill="#ffffff" stroke="#10b981" stroke-width="2"/>
-  <!-- Right hemisphere (green) -->
-  <circle cx="36" cy="24" r="10" fill="#10b981" stroke="#10b981" stroke-width="2"/>
-  <!-- Connect the two halves -->
-  <rect x="12" y="14" width="24" height="20" fill="#ffffff"/>
-  <rect x="26" y="14" width="10" height="20" fill="#10b981"/>
+  <rect width="48" height="48" rx="12" fill="#061411"/>
+  <path d="M14 34V14h5l10 12V14h5v20h-5L19 22v12h-5Z" fill="#9DE6C7"/>
+  <circle cx="38" cy="10" r="3" fill="#34D399"/>
 </svg>

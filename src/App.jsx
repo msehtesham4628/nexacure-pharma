@@ -21,15 +21,17 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const scrollToRoute = () => {
-      setPath(window.location.pathname);
-      const id = window.location.pathname === '/' ? 'home' : window.location.pathname.slice(1);
-      document.getElementById(id)?.scrollIntoView({ block: 'start' });
-    };
-    scrollToRoute();
-    window.addEventListener('popstate', scrollToRoute);
-    return () => window.removeEventListener('popstate', scrollToRoute);
+    const updateRoute = () => setPath(window.location.pathname);
+    window.addEventListener('popstate', updateRoute);
+    return () => window.removeEventListener('popstate', updateRoute);
   }, []);
+
+  useEffect(() => {
+    const sectionId = path === '/' ? 'home' : path.slice(1);
+    requestAnimationFrame(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, [path]);
 
   if (isLegalPath(path)) return <div className="overflow-x-clip bg-[#061411] text-slate-100"><Navbar /><LegalPage path={path} /><Footer /></div>;
 
